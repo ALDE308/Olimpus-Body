@@ -303,8 +303,8 @@ public class AreaJefe extends javax.swing.JFrame {
     }//GEN-LAST:event_botonProductosActionPerformed
 
     private void botonProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProveedorActionPerformed
-        ControlProvedor vistaProvedor = new ControlProvedor();
-        vistaProvedor.setVisible(true);
+        ControlProveedor vistaProveedor = new ControlProveedor();
+        vistaProveedor.setVisible(true);
     }//GEN-LAST:event_botonProveedorActionPerformed
 
     private void botonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReportesActionPerformed

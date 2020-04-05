@@ -2,7 +2,7 @@
 package Modelo;
 
 
-public class Provedor {
+public class Proveedor {
     private String nombreProv;
     private int nitProv; 
     private int telefonoProv;
@@ -11,10 +11,10 @@ public class Provedor {
     private String productoProv;
     private String estadoProv;
     
-    public Provedor(){
+    public Proveedor(){
    }
 
-    public Provedor(String nombreProv, int nitProv, int telefonoProv, String direccionProv, int precioProdProv, String productoProv, String estadoProv) {
+    public Proveedor(String nombreProv, int nitProv, int telefonoProv, String direccionProv, int precioProdProv, String productoProv, String estadoProv) {
         this.nombreProv = nombreProv;
         this.nitProv = nitProv;
         this.telefonoProv = telefonoProv;
