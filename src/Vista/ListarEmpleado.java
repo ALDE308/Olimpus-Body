@@ -154,19 +154,21 @@ public class ListarEmpleado extends javax.swing.JFrame {
     Modelo.DAOEmpleado listarEmple = new Modelo.DAOEmpleado();
     
     private void listarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarEmpleadoActionPerformed
+        String estado = "Activo";
         if (txtlistar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "DEBE INGRESAR UN DATO");
         } else if (cboxFiltro.getSelectedItem().toString().equals("Cargo")) {
-            String estado = "Activo";
             listarEmple.listarEmpl(txtlistar.getText(), cboxFiltro.getSelectedItem().toString(), tblDatos, estado);
             limpiarCampos();
         } else if (cboxFiltro.getSelectedItem().toString().equals("Sueldo")) {
-            listarEmple.setSueldo(Integer.parseInt(txtlistar.getText()));
-            String estado = "Activo";
+            try{
+                listarEmple.setSueldo(Integer.parseInt(txtlistar.getText()));
+            }catch(NumberFormatException ex){
+        	JOptionPane.showMessageDialog(null,"DEBE INGRESAR NUMEROS");
+            }
             listarEmple.listarEmpl(txtlistar.getText(), cboxFiltro.getSelectedItem().toString(), tblDatos, estado);
             limpiarCampos();
         } else {
-            String estado = "Activo";
             listarEmple.listarEmpl(txtlistar.getText(), cboxFiltro.getSelectedItem().toString(), tblDatos, estado);
             limpiarCampos();
         }

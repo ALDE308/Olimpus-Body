@@ -37,8 +37,8 @@ public class DAOProveedor extends Proveedor{
               
               return ("NOMBRE: " + nombreprov + "\n" + "TELEFONO: " + telprov + "\n" + "DIRECCION: " + dirprov + "\n" + "NOMBRE PRODUCTO: " + nombreproducprov + "\n" + "PRECIO DEL PRODUCTO: " + precioproducrov);
           }else{
-              JOptionPane.showMessageDialog(null, "No se encuentra el proveedor");
-              return "No se encontró";
+              JOptionPane.showMessageDialog(null, "El Proveedor no esta registrado");
+              return " ";
           }
       }catch(SQLException ex){
               System.out.println("Error");
@@ -57,9 +57,8 @@ public class DAOProveedor extends Proveedor{
     public String modificar(){
         String SQL = "UPDATE  proveedor SET nombreprov = '"+super.getNombreProv()+ "', telefonoprov = "
                 +super.getTelefonoProv()+", direccionprov = '"+ super.getDireccionProv()+"', precioprodprov = "
-                +super.getPrecioProdProv()+", producprov = '"+ super.getProductoProv()
+                +super.getPrecioProdProv()+", productoprov = '"+ super.getProductoProv()
                 +"' WHERE nitprov = " + super.getNitProv()+" AND estadoProv = '" + super.getEstadoProv()+"';";
-        //String SQL = "UPDATE FROM Persona  WHERE cedula = '"+ super.getCedula() + "' SET nombre = '"+ super.getNombre()+"'";
         String resultado = "";
         resultado = conexionProv.modifica(SQL);
         return resultado;
@@ -74,7 +73,7 @@ public class DAOProveedor extends Proveedor{
             if(rs.next()){  
                 return ("");
             }else {
-                return ("No esta");
+                return ("El proveedor no esta registrado");
             }
         }catch(SQLException ex){
             ex.getMessage();
@@ -84,7 +83,7 @@ public class DAOProveedor extends Proveedor{
     }
     
     public void listarProve(String valor, String filtro, JTable tabla,String estado) {
-        String[] columnas = {"nombre", "nit", "telefono", "direccion", "precioProducto", "nombreProducto"};
+        String[] columnas = {"nombre", "nit", "telefono", "direccion", "Producto", "Producto"};
         String[] registros = new String[6];
         modeloTabla = new DefaultTableModel(null, columnas);
         String SQL;
@@ -96,20 +95,23 @@ public class DAOProveedor extends Proveedor{
             SQL = "SELECT * FROM proveedor WHERE precioprodprov = " + super.getPrecioProdProv()+" AND estadoProv = '"+estado+"';";
         } else {
             SQL = "SELECT *"
-                    + "FROM proveedor WHERE producprov LIKE '%" + valor + "%'"+" AND estadoProv = '"+estado+"';";
+                    + "FROM proveedor WHERE productoprov LIKE '%" + valor + "%'"+" AND estadoProv = '"+estado+"';";
         }
         try {
             java.sql.ResultSet rs = null;
             rs = conexionProv.consulta(SQL);
+            System.out.print(rs);
+            
             while (rs.next()) {
-                registros[0] = rs.getString("nombreprov");
-                registros[1] = rs.getString("nitprov");
-                registros[2] = rs.getString("telprov");
-                registros[3] = rs.getString("dirprov");
-                registros[4] = rs.getString("precioproduprov");
-                registros[5] = rs.getString("producprov");
-                modeloTabla.addRow(registros);
+            registros[0] = rs.getString("nombreprov");
+            registros[1] = rs.getString("nitprov");
+            registros[2] = rs.getString("telefonoprov");
+            registros[3] = rs.getString("direccionprov");
+            registros[4] = rs.getString("precioprodprov");
+            registros[5] = rs.getString("productoprov");
+            modeloTabla.addRow(registros);
             }
+            
             tabla.setModel(modeloTabla);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e, "Error al cargar datos", JOptionPane.ERROR_MESSAGE);

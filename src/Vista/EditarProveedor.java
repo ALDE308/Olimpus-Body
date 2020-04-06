@@ -1,6 +1,8 @@
 
 package Vista;
 
+import javax.swing.JOptionPane;
+
 
 public class EditarProveedor extends javax.swing.JFrame {
 
@@ -19,13 +21,13 @@ public class EditarProveedor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        nitProvedor = new javax.swing.JTextField();
+        nitProveedor = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        nombreProvedor = new javax.swing.JTextField();
-        telefonoProvedor = new javax.swing.JTextField();
+        nombreProveedor = new javax.swing.JTextField();
+        telefonoProveedor = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        direccionProvedor = new javax.swing.JTextField();
+        direccionProveedor = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         nombreProducto = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -47,11 +49,23 @@ public class EditarProveedor extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("NIT DEL PROVEDOR");
 
+        nitProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nitProveedorKeyTyped(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("NOMBRES");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("TELEFONO");
+
+        telefonoProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telefonoProveedorKeyTyped(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("DIRECCION");
@@ -68,6 +82,11 @@ public class EditarProveedor extends javax.swing.JFrame {
         guardarCambios.setOpaque(false);
         guardarCambios.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonGUARDAR.PNG"))); // NOI18N
         guardarCambios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonGUARDAR.PNG"))); // NOI18N
+        guardarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarCambiosActionPerformed(evt);
+            }
+        });
 
         botonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonSALIR.PNG"))); // NOI18N
         botonSalir.setBorder(null);
@@ -78,6 +97,12 @@ public class EditarProveedor extends javax.swing.JFrame {
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSalirActionPerformed(evt);
+            }
+        });
+
+        precioProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                precioProductoKeyTyped(evt);
             }
         });
 
@@ -104,15 +129,15 @@ public class EditarProveedor extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nombreProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nitProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(telefonoProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(direccionProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nitProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(telefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(direccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(precioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(90, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(123, 123, 123)
+                .addGap(70, 70, 70)
                 .addComponent(guardarCambios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botonSalir)
@@ -133,18 +158,18 @@ public class EditarProveedor extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
-                            .addComponent(nitProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nitProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70)
                         .addComponent(jLabel4))
-                    .addComponent(nombreProvedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreProveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
-                    .addComponent(telefonoProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(telefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
-                    .addComponent(direccionProvedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(direccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
@@ -178,11 +203,81 @@ public class EditarProveedor extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botonSalirActionPerformed
 
+    private void guardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarCambiosActionPerformed
+        String estado = "Activo";
+        Modelo.DAOProveedor objetoProveedor= new Modelo.DAOProveedor();
+        String resultado = "";
+        resultado = objetoProveedor.consultarExitencia(estado);
+        if(nombreProveedor.getText().equals("")||direccionProveedor.getText().equals("")||nitProveedor.getText().equals("")
+                ||nombreProducto.getText().equals("")||precioProducto.getText().equals("")||telefonoProveedor.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"DEBE INGRESAR TODOS LOS DATOS"); 
+            limpiarCampos();
+        }
+        if(resultado.equals("No esta")){
+            JOptionPane.showMessageDialog(null, "El proveedor no esta registrado");
+            limpiarCampos();
+        }else{
+             
+            objetoProveedor.setNitProv(Integer.parseInt(nitProveedor.getText()));
+            objetoProveedor.setNombreProv(nombreProveedor.getText());
+            objetoProveedor.setTelefonoProv(Integer.parseInt(telefonoProveedor.getText()));
+            objetoProveedor.setDireccionProv(direccionProveedor.getText());
+            objetoProveedor.setPrecioProdProv(Integer.parseInt(precioProducto.getText()));
+            objetoProveedor.setProductoProv(nombreProducto.getText());
+            objetoProveedor.setEstadoProv(estado);
+            resultado = objetoProveedor.modificar();
+            
+            if(resultado.equals("Error")){
+                JOptionPane.showMessageDialog(null, "No se modifico");
+            }else{
+                JOptionPane.showMessageDialog(null, "Se modifico");
+            }
+            limpiarCampos();
+        }
+    }//GEN-LAST:event_guardarCambiosActionPerformed
+
+    private void telefonoProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefonoProveedorKeyTyped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_telefonoProveedorKeyTyped
+
+    private void precioProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precioProductoKeyTyped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_precioProductoKeyTyped
+
+    private void nitProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nitProveedorKeyTyped
+       char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_nitProveedorKeyTyped
+    public void limpiarCampos(){
+        direccionProveedor.setText(" ");
+        nitProveedor.setText(" ");
+        nombreProducto.setText(" ");
+        nombreProveedor.setText(" ");
+        precioProducto.setText(" ");
+        telefonoProveedor.setText("");
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonSalir;
-    private javax.swing.JTextField direccionProvedor;
+    private javax.swing.JTextField direccionProveedor;
     private javax.swing.JButton guardarCambios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -193,10 +288,10 @@ public class EditarProveedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField nitProvedor;
+    private javax.swing.JTextField nitProveedor;
     private javax.swing.JTextField nombreProducto;
-    private javax.swing.JTextField nombreProvedor;
+    private javax.swing.JTextField nombreProveedor;
     private javax.swing.JTextField precioProducto;
-    private javax.swing.JTextField telefonoProvedor;
+    private javax.swing.JTextField telefonoProveedor;
     // End of variables declaration//GEN-END:variables
 }

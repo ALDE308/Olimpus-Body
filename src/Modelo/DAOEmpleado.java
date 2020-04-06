@@ -54,12 +54,12 @@ public class DAOEmpleado extends Empleado{
                 String sueldoEmple = rs.getString(8);
                 String cargoEmple = rs.getString(9);
                 
-                return ("USUARIO: "+ usuarioEmple +"\n "+" \n"+ "NOMBRE: "+ nombreEmple +"\n "+" \n"+"APELLIDO: "+ apellidoEmple + "\n "+
-                        " \n"+"CEDULA: "+cedulaEmple +" \n"+" \n"+"TELEFONO: "+ telefonoEmple+" \n"+" \n"+"DIRECCION: "+direccionEmple+
-                        " \n"+" \n"+ "SUELDO: "+sueldoEmple+" \n"+" \n"+ "CARGO: "+cargoEmple );
+                return ("USUARIO:    "+ usuarioEmple +"\n "+"NOMBRE:     "+ nombreEmple +"\n "+ "APELLIDO:   "+ apellidoEmple +
+                        " \n"+"CEDULA:        "+cedulaEmple +" \n"+ "TELEFONO:   "+ telefonoEmple+" \n"+"DIRECCION:  "+direccionEmple+
+                        " \n"+"SUELDO:      "+sueldoEmple+" \n"+ "CARGO:        "+cargoEmple );
             }else{
-                JOptionPane.showMessageDialog(null, "Error Elemento no Encontrado");
-                return "No esta";
+                JOptionPane.showMessageDialog(null, "El Empleado no esta registrado");
+                return "";
             }
         }catch(SQLException ex){
             ex.getMessage();
