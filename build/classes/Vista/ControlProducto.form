@@ -220,6 +220,9 @@
               <Image iconType="3" name="/Imagenes/botonCREAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearProductoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel60">
           <Properties>
@@ -252,6 +255,9 @@
               <Image iconType="3" name="/Imagenes/botonELIMINAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarProductoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel62">
           <Properties>
@@ -277,6 +283,9 @@
               <Image iconType="3" name="/Imagenes/botonEDITAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarProductoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel63">
           <Properties>
@@ -302,6 +311,9 @@
               <Image iconType="3" name="/Imagenes/botonBUSCAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarProductoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel64">
           <Properties>
@@ -326,6 +338,9 @@
               <Image iconType="3" name="/Imagenes/botonLISTAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listarProductoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonAtras">
           <Properties>
@@ -344,6 +359,9 @@
               <Image iconType="3" name="/Imagenes/botonATRAS.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

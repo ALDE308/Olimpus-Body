@@ -3,6 +3,7 @@ package Controlador;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorConectarDB {
@@ -30,9 +31,10 @@ public class ControladorConectarDB {
         try{
             st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery(sql);
+            
         }catch(SQLException  ex){
             System.out.println("Error insertando "+ ex.toString());
-            System.out.println("El dato se inserto");
+            System.out.println("Se insertando con exito ");
         }
     }
     

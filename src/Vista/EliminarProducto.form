@@ -171,6 +171,9 @@
               <Image iconType="3" name="/Imagenes/botonBUSCAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarProductoActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -204,6 +207,9 @@
               <Image iconType="3" name="/Imagenes/botonELIMINAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarProductoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salirProducto">
           <Properties>
@@ -222,6 +228,9 @@
               <Image iconType="3" name="/Imagenes/botonSALIR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirProductoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
