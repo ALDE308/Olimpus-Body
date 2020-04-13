@@ -20,7 +20,7 @@ public class ControladorConectarDB {
                 System.out.println("ERROR CARGANDO");
             }
              
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Olimpus Body", "postgres","a1760396");
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/OlimpusBody(OB)1.0", "postgres"," ");
         }catch(SQLException ex){
             System.out.println("No se pudo conectar");
         }
