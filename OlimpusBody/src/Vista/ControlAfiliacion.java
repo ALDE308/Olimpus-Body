@@ -1,13 +1,10 @@
-
 package Vista;
-
 
 public class ControlAfiliacion extends javax.swing.JFrame {
 
-  
     public ControlAfiliacion() {
         initComponents();
-        
+
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -56,6 +53,11 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         crearAfiliacin.setOpaque(false);
         crearAfiliacin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonCREAR.PNG"))); // NOI18N
         crearAfiliacin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonCREAR.PNG"))); // NOI18N
+        crearAfiliacin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearAfiliacinActionPerformed(evt);
+            }
+        });
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGOGRANDE.PNG"))); // NOI18N
 
@@ -67,6 +69,11 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         eliminarAfiliacion.setOpaque(false);
         eliminarAfiliacion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonELIMINAR.PNG"))); // NOI18N
         eliminarAfiliacion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonELIMINAR.PNG"))); // NOI18N
+        eliminarAfiliacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarAfiliacionActionPerformed(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoEDITAR.png"))); // NOI18N
 
@@ -76,6 +83,11 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         editarAfiliacion.setOpaque(false);
         editarAfiliacion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonEDITAR.PNG"))); // NOI18N
         editarAfiliacion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonEDITAR.PNG"))); // NOI18N
+        editarAfiliacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarAfiliacionActionPerformed(evt);
+            }
+        });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoBUSCAR.png"))); // NOI18N
 
@@ -85,6 +97,11 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         buscarAfiliado.setOpaque(false);
         buscarAfiliado.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonBUSCAR.PNG"))); // NOI18N
         buscarAfiliado.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonBUSCAR.PNG"))); // NOI18N
+        buscarAfiliado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarAfiliadoActionPerformed(evt);
+            }
+        });
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoLISTAR.png"))); // NOI18N
 
@@ -93,6 +110,11 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         listarAfiliado.setBorderPainted(false);
         listarAfiliado.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonLISTAR.PNG"))); // NOI18N
         listarAfiliado.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonLISTAR.PNG"))); // NOI18N
+        listarAfiliado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarAfiliadoActionPerformed(evt);
+            }
+        });
 
         botonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonATRAS.png"))); // NOI18N
         botonAtras.setBorder(null);
@@ -100,6 +122,11 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         botonAtras.setContentAreaFilled(false);
         botonAtras.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonATRAS.png"))); // NOI18N
         botonAtras.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonATRAS.png"))); // NOI18N
+        botonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -212,40 +239,42 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ControlAfiliacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ControlAfiliacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ControlAfiliacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ControlAfiliacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
+        AreaJefe aj = new AreaJefe();
+        setVisible(false);
+        aj.setVisible(true);
+    }//GEN-LAST:event_botonAtrasActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ControlAfiliacion().setVisible(true);
-            }
-        });
-    }
+    private void crearAfiliacinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearAfiliacinActionPerformed
+        RegistrarCliente rc = new RegistrarCliente();
+        setVisible(false);
+        rc.setVisible(true);
+    }//GEN-LAST:event_crearAfiliacinActionPerformed
+
+    private void eliminarAfiliacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarAfiliacionActionPerformed
+        EliminarCliente ec = new EliminarCliente();
+        setVisible(false);
+        ec.setVisible(true);
+    }//GEN-LAST:event_eliminarAfiliacionActionPerformed
+
+    private void editarAfiliacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarAfiliacionActionPerformed
+        EditarCleinte ec = new EditarCleinte();
+        setVisible(false);
+        ec.setVisible(true);
+    }//GEN-LAST:event_editarAfiliacionActionPerformed
+
+    private void buscarAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarAfiliadoActionPerformed
+        BuscarCliente bc = new BuscarCliente();
+        setVisible(false);
+        bc.setVisible(true);
+    }//GEN-LAST:event_buscarAfiliadoActionPerformed
+
+    private void listarAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarAfiliadoActionPerformed
+        ListarCliente lc = new ListarCliente();
+        setVisible(false);
+        lc.setVisible(true);
+    }//GEN-LAST:event_listarAfiliadoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtras;

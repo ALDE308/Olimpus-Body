@@ -2,13 +2,14 @@
 package Vista;
 
 import com.sun.awt.AWTUtilities;
+import javax.swing.JOptionPane;
 
 
 public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
-        
+        AWTUtilities.setWindowOpaque(this, false);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
        
@@ -24,11 +25,11 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtUsuaio = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         aceptrarLogin = new javax.swing.JButton();
         salirLogin = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        contrasenUsuario = new javax.swing.JPasswordField();
+        contrasenaUsuario = new javax.swing.JPasswordField();
 
         jLabel3.setText("jLabel3");
 
@@ -94,8 +95,8 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsuaio)
-                    .addComponent(contrasenUsuario))
+                    .addComponent(txtUsuario)
+                    .addComponent(contrasenaUsuario))
                 .addGap(31, 31, 31))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -117,11 +118,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtUsuaio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(contrasenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(contrasenaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(aceptrarLogin)
@@ -150,23 +151,59 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_salirLoginActionPerformed
 
     private void aceptrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptrarLoginActionPerformed
-        // TODO add your handling code here:
+        try {
+            Modelo.DAOEmpleado obj = new Modelo.DAOEmpleado();
+            Controlador.EncriptarPassword encriptar = new Controlador.EncriptarPassword();
+            String usuario = txtUsuario.getText();
+            String password = contrasenaUsuario.getText();
+            obj.setUsuarioEmpleado(usuario);
+            obj.setContrasenaEmpleado(encriptar.encriptar(password));
+            
+            if(txtUsuario.getText().equals("")||contrasenaUsuario.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Debe ingresar usuario y contrasena");
+            }else if (obj.valide() == false) {
+                JOptionPane.showMessageDialog(rootPane, "Datos Incorrectos");
+                
+            } else {
+                String resultado = "";
+                String nombre = "";
+                resultado = obj.consultarCargo();
+                nombre = obj.nombreEmple();
+                
+                if (resultado.equals("No esta")) {
+                    JOptionPane.showMessageDialog(null, "EL USUARIO NO ESTA REGISTRADO");
+
+                } else if (resultado.equals("Jefe")) {
+                    
+                    AreaJefe ge = new AreaJefe();
+                    ge.setVisible(true);
+                    ge.nombreUsuario.setText(nombre);
+
+                } else if (resultado.equals("Empleado")) {
+
+                    AreaEmpleado ge1 = new AreaEmpleado();
+                    ge1.setVisible(true);
+                    ge1.nombreUsuario.setText(nombre);
+                   
+
+                } else if (resultado.equals("Usuario")) {
+
+                    AreaUsuario gU = new AreaUsuario();
+                    gU.setVisible(true);
+                    gU.nombreUsuario.setText(nombre);
+                }
+                 this.dispose();   
+            }
+        }catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println(ex);
+        }
     }//GEN-LAST:event_aceptrarLoginActionPerformed
 
-    public static void main(String args[]) {
-
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptrarLogin;
-    private javax.swing.JPasswordField contrasenUsuario;
+    private javax.swing.JPasswordField contrasenaUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -175,6 +212,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salirLogin;
-    private javax.swing.JTextField txtUsuaio;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

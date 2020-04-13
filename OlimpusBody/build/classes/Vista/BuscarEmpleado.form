@@ -102,8 +102,8 @@
                       <Component id="cedulaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="239" max="-2" attributes="0"/>
-                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="291" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="salirEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="buscarEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -138,6 +138,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cedulaEmpleado">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cedulaEmpleadoActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -171,6 +174,9 @@
               <Image iconType="3" name="/Imagenes/botonBUSCAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarEmpleadoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salirEmpleado">
           <Properties>
@@ -189,6 +195,9 @@
               <Image iconType="3" name="/Imagenes/botonSALIR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirEmpleadoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

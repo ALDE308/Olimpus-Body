@@ -6,7 +6,7 @@ public class Cliente {
     private String nombreCli;
     private String apellidoCli;
     private int cedulaCli; 
-    private int telefonoCli;
+    private double telefonoCli;
     private String correoCli;
     private String sexoCli;
     private String planCli;
@@ -39,7 +39,7 @@ public class Cliente {
         return cedulaCli;
     }
 
-    public int getTelefonoCli() {
+    public double getTelefonoCli() {
         return telefonoCli;
     }
 
@@ -71,7 +71,7 @@ public class Cliente {
         this.cedulaCli = cedulaCli;
     }
 
-    public void setTelefonoCli(int telefonoCli) {
+    public void setTelefonoCli(double telefonoCli) {
         this.telefonoCli = telefonoCli;
     }
 

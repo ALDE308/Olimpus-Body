@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Univalle1/DesarrolloII/Proyecto/OlimpusBody/src/Modelo/Cotizacion.java</file>
-            <file>file:/D:/Univalle1/DesarrolloII/Proyecto/OlimpusBody/src/Modelo/Provedor.java</file>
-            <file>file:/D:/Univalle1/DesarrolloII/Proyecto/OlimpusBody/src/Modelo/Empleado.java</file>
-            <file>file:/D:/Univalle1/DesarrolloII/Proyecto/OlimpusBody/src/Modelo/Cliente.java</file>
-            <file>file:/D:/Univalle1/DesarrolloII/Proyecto/OlimpusBody/src/Modelo/Producto.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/OlimpusBody/src/Modelo/DAOProveedor.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/OlimpusBody/src/Controlador/ControladorCliente.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/OlimpusBody/src/Modelo/DAOCliente.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/OlimpusBody/src/Vista/ListarCliente.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/OlimpusBody/src/Vista/BuscarCliente.java</file>
         </group>
     </open-files>
 </project-private>

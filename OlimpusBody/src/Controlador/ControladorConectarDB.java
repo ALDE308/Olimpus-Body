@@ -1,3 +1,4 @@
+
 package Controlador;
 
 import java.sql.DriverManager;
@@ -5,7 +6,7 @@ import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorConectarDB {
-     java.sql.Connection con; //para cargar el Driver  de  JDBC para postgresql 
+    java.sql.Connection con; //para cargar el Driver  de  JDBC para postgresql 
     java.sql.Statement st; //para conectarse con el motor de DB 
     java.sql.ResultSet res; //procesar las consultas
     DefaultTableModel modeloTabla;
@@ -19,7 +20,7 @@ public class ControladorConectarDB {
                 System.out.println("ERROR CARGANDO");
             }
              
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/OlimpusBody(OB)1.0", "postgres","a1760396");
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Olimpus Body", "postgres","a1760396");
         }catch(SQLException ex){
             System.out.println("No se pudo conectar");
         }

@@ -7,7 +7,7 @@ public class Empleado {
     private String nombreEmpleado;
     private String apellidoEmpleado;
     private int cedulaEmpleado;
-    private int telefonoEmpleado;
+    private double telefonoEmpleado;
     private String direccionEmpleado;
     private double sueldo;
     private String cargo;
@@ -17,7 +17,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(String usuarioEmpleado, String contrasenaEmpleado, String nombreEmpleado, String apellidoEmpleado, int cedulaEmpleado, int telefonoEmpleado, String direccionEmpleado, double sueldo, String cargo, int codigoProductoE, String estadoEmpl) {
+    public Empleado(String usuarioEmpleado, String contrasenaEmpleado, String nombreEmpleado, String apellidoEmpleado, int cedulaEmpleado, double telefonoEmpleado, String direccionEmpleado, double sueldo, String cargo, int codigoProductoE, String estadoEmpl) {
         this.usuarioEmpleado = usuarioEmpleado;
         this.contrasenaEmpleado = contrasenaEmpleado;
         this.nombreEmpleado = nombreEmpleado;
@@ -51,7 +51,7 @@ public class Empleado {
         return cedulaEmpleado;
     }
 
-    public int getTelefonoEmpleado() {
+    public double getTelefonoEmpleado() {
         return telefonoEmpleado;
     }
 
@@ -95,7 +95,7 @@ public class Empleado {
         this.cedulaEmpleado = cedulaEmpleado;
     }
 
-    public void setTelefonoEmpleado(int telefonoEmpleado) {
+    public void setTelefonoEmpleado(double telefonoEmpleado) {
         this.telefonoEmpleado = telefonoEmpleado;
     }
 

@@ -81,8 +81,8 @@
                   </Group>
                   <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtUsuaio" max="32767" attributes="0"/>
-                      <Component id="contrasenUsuario" max="32767" attributes="0"/>
+                      <Component id="txtUsuario" max="32767" attributes="0"/>
+                      <Component id="contrasenaUsuario" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
@@ -111,12 +111,12 @@
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtUsuaio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="contrasenUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="contrasenaUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -159,7 +159,7 @@
             <Property name="text" type="java.lang.String" value="BIENVENIDO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtUsuaio">
+        <Component class="javax.swing.JTextField" name="txtUsuario">
         </Component>
         <Component class="javax.swing.JButton" name="aceptrarLogin">
           <Properties>
@@ -210,7 +210,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="contrasenUsuario">
+        <Component class="javax.swing.JPasswordField" name="contrasenaUsuario">
         </Component>
       </SubComponents>
     </Container>

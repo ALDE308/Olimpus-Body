@@ -66,7 +66,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                          <Component id="guardarCliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="guardarEmpleado" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="salir" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
@@ -84,16 +84,18 @@
                               <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="nombreCliente" alignment="0" max="32767" attributes="0"/>
-                              <Component id="apellidosCliente" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cedulaCliente" alignment="0" max="32767" attributes="0"/>
-                              <Component id="telefonoCliente" alignment="0" max="32767" attributes="0"/>
-                              <Component id="correoCiente" alignment="0" max="32767" attributes="0"/>
-                              <Component id="sexoCliente" alignment="0" pref="352" max="32767" attributes="0"/>
-                              <Component id="jTextField1" max="32767" attributes="0"/>
-                              <Component id="jTextField2" max="32767" attributes="0"/>
-                              <Component id="jTextField3" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="nombreUsuarioEmpleado" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="contrasenaEmpleado" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nombreEmpleado" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="apellidoEmpleado" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cedulaEmpleado" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="telefonoEmpelado" alignment="0" pref="352" max="32767" attributes="0"/>
+                                  <Component id="direccionEmpleado" max="32767" attributes="0"/>
+                                  <Component id="sueldoEmpleado" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="cargoEmpleado" min="-2" pref="174" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -126,51 +128,51 @@
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Group type="103" groupAlignment="3" attributes="0">
                                                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="nombreCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="nombreUsuarioEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="apellidosCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="contrasenaEmpleado" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="cedulaCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nombreEmpleado" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="telefonoCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="apellidoEmpleado" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="correoCiente" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="cedulaEmpleado" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="sexoCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="telefonoEmpelado" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="direccionEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sueldoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cargoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="guardarCliente" min="-2" max="-2" attributes="0"/>
+                      <Component id="guardarEmpleado" min="-2" max="-2" attributes="0"/>
                       <Component id="salir" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -242,7 +244,7 @@
             <Property name="text" type="java.lang.String" value="TELEFONO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="guardarCliente">
+        <Component class="javax.swing.JButton" name="guardarEmpleado">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/botonGUARDAR.PNG"/>
@@ -259,6 +261,9 @@
               <Image iconType="3" name="/Imagenes/botonGUARDAR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarEmpleadoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salir">
           <Properties>
@@ -277,18 +282,27 @@
               <Image iconType="3" name="/Imagenes/botonSALIR.PNG"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="nombreCliente">
+        <Component class="javax.swing.JTextField" name="nombreUsuarioEmpleado">
         </Component>
-        <Component class="javax.swing.JTextField" name="apellidosCliente">
+        <Component class="javax.swing.JTextField" name="contrasenaEmpleado">
         </Component>
-        <Component class="javax.swing.JTextField" name="cedulaCliente">
+        <Component class="javax.swing.JTextField" name="nombreEmpleado">
         </Component>
-        <Component class="javax.swing.JTextField" name="telefonoCliente">
+        <Component class="javax.swing.JTextField" name="apellidoEmpleado">
         </Component>
-        <Component class="javax.swing.JTextField" name="correoCiente">
+        <Component class="javax.swing.JTextField" name="cedulaEmpleado">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cedulaEmpleadoKeyTyped"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="sexoCliente">
+        <Component class="javax.swing.JTextField" name="telefonoEmpelado">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="telefonoEmpeladoKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
@@ -306,9 +320,9 @@
             <Property name="text" type="java.lang.String" value="SUELDO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="direccionEmpleado">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="sueldoEmpleado">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
@@ -318,7 +332,22 @@
             <Property name="text" type="java.lang.String" value="CARGO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JComboBox" name="cargoEmpleado">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Empleado"/>
+                <StringItem index="1" value="Jefe"/>
+                <StringItem index="2" value="Usuario"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cargoEmpleadoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
