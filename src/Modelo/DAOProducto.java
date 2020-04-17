@@ -96,8 +96,8 @@ public class DAOProducto extends Producto {
         }
         return null;
     }
-  
-  public void listarProdu(String valor, String filtro, JTable tabla,String estado) {
+       
+    public void listarProdu(String valor, String filtro, JTable tabla,String estado) {
         String[] columnas = {"nombre", "codigo", "precio", "descripcion", "cantidad", "nitProv"};
         String[] registros = new String[6];
         modeloTabla = new DefaultTableModel(null, columnas);

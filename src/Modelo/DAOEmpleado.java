@@ -80,7 +80,8 @@ public class DAOEmpleado extends Empleado{
         String SQL = "UPDATE  Empleado SET nombreEmpleado = '"+super.getNombreEmpleado()+ "', apellidoEmpleado = '"
                 +super.getApellidoEmpleado()+"', telefonoEmpleado = "+ super.getTelefonoEmpleado()+", direccionEmpleado = '"
                 +super.getDireccionEmpleado()+"',sueldo = '"+super.getSueldo()
-                +"' WHERE cedulaEmpleado = " + super.getCedulaEmpleado();
+                +"' WHERE cedulaEmpleado = " + super.getCedulaEmpleado() + " AND estadoEmpl = '" + super.getEstadoEmpl()+"';";
+       
         String resultado = "";
         resultado = objConecta.modifica(SQL);
         return resultado;

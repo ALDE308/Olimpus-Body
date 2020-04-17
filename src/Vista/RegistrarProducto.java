@@ -1,6 +1,7 @@
 
 package Vista;
 
+import static javafx.beans.binding.Bindings.and;
 import javax.swing.JOptionPane;
 
 
@@ -206,24 +207,30 @@ public class RegistrarProducto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    controlador.ControladorProducto producto = new controlador.ControladorProducto();
+    Controlador.ControladorProveedor proveedorb = new Controlador.ControladorProveedor(); 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         this.dispose();
     }//GEN-LAST:event_salirActionPerformed
 
     private void guardarProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarProvedorActionPerformed
-        String nombre = nombreProducto.getText();
-        int codigo = Integer.parseInt(codigoProducto.getText());
-        double precio = Double.parseDouble(precioProducto.getText());
-        String descripcion = descripcionProducto.getText();
-        int cantidad = Integer.parseInt(cantidadProducto.getText());
-        int proveedor = Integer.parseInt(nitProveedor.getText());
+        
         String estado = "Activo";
         
-        controlador.ControladorProducto producto = new controlador.ControladorProducto();
-        String resultado = producto.verificarExitencia(codigo);
-        
-        if(resultado.equals("No esta")){
+        if (nombreProducto.getText().equals("")||nitProveedor.getText().equals("")||codigoProducto.getText().equals("")
+                ||precioProducto.getText().equals("")||descripcionProducto.getText().equals("")||
+                cantidadProducto.getText().equals("")||nitProveedor.getText().equals("")) {
+            
+            JOptionPane.showMessageDialog(rootPane, "Debe ingresar todos los datos");
+             limpiarCampos();
+ 
+        }else {
+            String nombre = nombreProducto.getText();
+            int codigo = Integer.parseInt(codigoProducto.getText());
+            double precio = Double.parseDouble(precioProducto.getText());
+            String descripcion = descripcionProducto.getText();
+            int cantidad = Integer.parseInt(cantidadProducto.getText());
+            int proveedor = Integer.parseInt(nitProveedor.getText());
             
           producto.guardarProducto(nombre, codigo, precio, descripcion, cantidad, proveedor,estado);
           
@@ -233,6 +240,7 @@ public class RegistrarProducto extends javax.swing.JFrame {
 
     private void cantidadProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadProductoKeyTyped
         char validar = evt.getKeyChar();
+        codigoProducto.setText(codigoProducto.getText().trim());
         if(Character.isLetter(validar)){
             getToolkit().beep();
             evt.consume();

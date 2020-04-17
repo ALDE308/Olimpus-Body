@@ -114,6 +114,12 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("SUELDO");
 
+        sueldoEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sueldoEmpleadoKeyTyped(evt);
+            }
+        });
+
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("CARGO");
 
@@ -296,6 +302,17 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         char dato = evt.getKeyChar();
        if(dato<'0'||dato>'9')evt.consume();
     }//GEN-LAST:event_cedulaEmpleadoKeyTyped
+
+    private void sueldoEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sueldoEmpleadoKeyTyped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+        char dato = evt.getKeyChar();
+       if(dato<'0'||dato>'9')evt.consume();
+    }//GEN-LAST:event_sueldoEmpleadoKeyTyped
     
     
     private void telefonoEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {                                          

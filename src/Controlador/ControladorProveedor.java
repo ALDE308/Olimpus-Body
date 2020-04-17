@@ -71,6 +71,7 @@ public class ControladorProveedor {
         int precio, String nombreproducto,String estado){
         Modelo.DAOProveedor  objProveedor;
         objProveedor = new Modelo.DAOProveedor();
+        
         String resultado = verificarExitencia(nit,estado);
         
         if(resultado.equals("")){
