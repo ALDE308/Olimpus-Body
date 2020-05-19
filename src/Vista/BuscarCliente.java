@@ -1,15 +1,12 @@
-
 package Vista;
 
 import javax.swing.JOptionPane;
 
-
 public class BuscarCliente extends javax.swing.JFrame {
-
 
     public BuscarCliente() {
         initComponents();
-        
+
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -149,12 +146,15 @@ public class BuscarCliente extends javax.swing.JFrame {
 
     private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
         Controlador.ControladorCliente buscaCliente = new Controlador.ControladorCliente();
-        if(cedulaCliente.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"DEBE INGRESAR LA CEDULA DEL EMPLEADO");
-        }else{
+        Controlador.ControladorAfiliacion buscaAfiliacion = new Controlador.ControladorAfiliacion();
+        if (cedulaCliente.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "DEBE INGRESAR LA CEDULA DEL EMPLEADO");
+        } else {
             int cedula = Integer.parseInt(cedulaCliente.getText());
             String estado = "Activo";
-            resultadoBusqueda.setText(buscaCliente.buscarCliente(cedula, estado));
+            resultadoBusqueda.setText(buscaCliente.buscarCliente(cedula, estado)
+                    + "\n" + "\n" + buscaAfiliacion.buscarAfiliacion(cedula, estado));
+
             cedulaCliente.setText("");
         }
     }//GEN-LAST:event_buscarClienteActionPerformed

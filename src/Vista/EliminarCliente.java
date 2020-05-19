@@ -1,15 +1,11 @@
-
 package Vista;
 
 import javax.swing.JOptionPane;
 
-
 public class EliminarCliente extends javax.swing.JFrame {
 
- 
     public EliminarCliente() {
         initComponents();
-        
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -171,42 +167,53 @@ public class EliminarCliente extends javax.swing.JFrame {
     private void cedulaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cedulaClienteActionPerformed
-    Controlador.ControladorCliente clien = new Controlador.ControladorCliente();
-    private void salirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirClienteActionPerformed
-        ControlAfiliacion ca = new ControlAfiliacion();
-        this.dispose();
-        ca.setVisible(true);
-    }//GEN-LAST:event_salirClienteActionPerformed
 
     private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
-        int cedula = Integer.parseInt(cedulaCliente.getText());
+        Controlador.ControladorCliente buscaCliente = new Controlador.ControladorCliente();
+        Controlador.ControladorAfiliacion buscaAfiliacion = new Controlador.ControladorAfiliacion();
         if (cedulaCliente.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "DEBE INGRESAR LA CEDULA DEL CLIENTE");
+            JOptionPane.showMessageDialog(null, "DEBE INGRESAR LA CEDULA DEL EMPLEADO");
         } else {
+            int cedula = Integer.parseInt(cedulaCliente.getText());
             String estado = "Activo";
-            resultadoBusqueda.setText(clien.buscarCliente(cedula, estado));
+            resultadoBusqueda.setText(buscaCliente.buscarCliente(cedula, estado)
+                    + "\n" + "\n" + buscaAfiliacion.buscarAfiliacion(cedula, estado));
         }
     }//GEN-LAST:event_buscarClienteActionPerformed
 
     private void eliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarClienteActionPerformed
+        Controlador.ControladorCliente clien = new Controlador.ControladorCliente();
+        Controlador.ControladorAfiliacion afiliacion = new Controlador.ControladorAfiliacion();
         if (cedulaCliente.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "DEBE BUSCAR AL EMPLEADO");
         } else if (JOptionPane.showConfirmDialog(rootPane, "Se eliminará el empleado, ¿desea continuar?",
                 "Eliminar Registro", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             String eliminarCli = "Inactivo";
             clien.eliminarCliente(Integer.parseInt(cedulaCliente.getText()), eliminarCli);
+            afiliacion.eliminarAfiliacion(Integer.parseInt(cedulaCliente.getText()), eliminarCli);
             limpiarCampos();
         }
     }//GEN-LAST:event_eliminarClienteActionPerformed
 
+    private void salirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirClienteActionPerformed
+        ControlAfiliacion ca = new ControlAfiliacion();
+        this.dispose();
+        ca.setVisible(true);
+    }//GEN-LAST:event_salirClienteActionPerformed
+
     private void cedulaClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cedulaClienteKeyTyped
-       char validar = evt.getKeyChar();
+        char validar = evt.getKeyChar();
         if (Character.isLetter(validar)) {
             getToolkit().beep();
             evt.consume();
             JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
         }
+        char dato = evt.getKeyChar();
+        if (dato < '0' || dato > '9') {
+            evt.consume();
+        }
     }//GEN-LAST:event_cedulaClienteKeyTyped
+
     public void limpiarCampos() {
         cedulaCliente.setText("");
         resultadoBusqueda.setText("");

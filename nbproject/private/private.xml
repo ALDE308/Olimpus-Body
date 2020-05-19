@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/OlimpusBody/src/Vista/EditarEmpleado.java</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/OlimpusBody/src/Modelo/DAOEmpleado.java</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/OlimpusBody/src/Vista/EliminarEmpleado.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/Proyecto01mayo/Olimpus-Body/src/Vista/ListarCliente.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/Proyecto01mayo/Olimpus-Body/src/Modelo/DAOCotizacion1.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/Proyecto01mayo/Olimpus-Body/src/Vista/BuscarCotizacion.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/Proyecto01mayo/Olimpus-Body/src/Modelo/DAOCliente.java</file>
+            <file>file:/D:/Univalle1/DesarrolloII/Proyecto01mayo/Olimpus-Body/src/Controlador/ControladorCotizacion.java</file>
         </group>
     </open-files>
 </project-private>

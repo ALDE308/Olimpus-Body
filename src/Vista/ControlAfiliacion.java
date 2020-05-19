@@ -249,7 +249,7 @@ public class ControlAfiliacion extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarAfiliacionActionPerformed
 
     private void editarAfiliacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarAfiliacionActionPerformed
-        EditarCliente ec = new EditarCliente();
+        EditarCleinte ec = new EditarCleinte();
         setVisible(false);
         ec.setVisible(true);
     }//GEN-LAST:event_editarAfiliacionActionPerformed
@@ -259,7 +259,7 @@ public class ControlAfiliacion extends javax.swing.JFrame {
         setVisible(false);
         bc.setVisible(true);
     }//GEN-LAST:event_buscarAfiliadoActionPerformed
-
+ 
     private void listarAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarAfiliadoActionPerformed
         ListarCliente lc = new ListarCliente();
         setVisible(false);

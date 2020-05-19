@@ -105,25 +105,25 @@ public class DAOProducto extends Producto {
         
         if (filtro.equals("Nombre")) {
             SQL = "SELECT *"
-                    + "FROM producto WHERE nombreProduc LIKE '%" + valor + "%'"+" AND estadoProd = '"+estado+"';";
+                    + "FROM producto WHERE nombrePro LIKE '%" + valor + "%'"+" AND estadoProd = '"+estado+"';";
         } else if (filtro.equals("Precio")) {
-            SQL = "SELECT * FROM producto WHERE precioProduc = " + super.getPrecioPro()+" AND estadoProd = '"+estado+"';";
+            SQL = "SELECT * FROM producto WHERE precioPro = " + super.getPrecioPro()+" AND estadoProd = '"+estado+"';";
         } else if (filtro.equals("Cantidad")){
-            SQL = "SELECT * FROM producto WHERE cantidadproduc = "+ super.getCantidadPro()+" AND estadoProd = '"+estado+"';";
+            SQL = "SELECT * FROM producto WHERE cantidadpro = "+ super.getCantidadPro()+" AND estadoProd = '"+estado+"';";
 
         }else {
-            SQL = "SELECT * FROM producto WHERE nitProv = " + super.getProveedorPro() +" AND estadoProd = '"+estado+"';";
+            SQL = "SELECT * FROM producto WHERE nitProveedor = " + super.getProveedorPro() +" AND estadoProd = '"+estado+"';";
         }
         try {
             java.sql.ResultSet rs = null;
             rs = conexionPro.consulta(SQL);
             while (rs.next()) {
-                registros[0] = rs.getString("nombreProduc");
-                registros[1] = rs.getString("codigoproduc");
-                registros[2] = rs.getString("precioProduc");
-                registros[3] = rs.getString("descripcionProduc");
-                registros[4] = rs.getString("cantidadproduc");
-                registros[5] = rs.getString("nitProv");
+                registros[0] = rs.getString("nombrePro");
+                registros[1] = rs.getString("codigopro");
+                registros[2] = rs.getString("precioPro");
+                registros[3] = rs.getString("descripcionPro");
+                registros[4] = rs.getString("cantidadpro");
+                registros[5] = rs.getString("nitProveedor");
                 
                 modeloTabla.addRow(registros);
             }

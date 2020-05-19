@@ -53,7 +53,7 @@ public class ControladorCliente {
     }
     
     public void editarCliente(String nombre,String apellido, int cedula,double telefono,
-                              String correo){
+                              String correo,String sexo, String estado){
         Modelo.DAOCliente objetoCliente = new Modelo.DAOCliente();
         //carga la informacion en el objeto
         objetoCliente.setNombreCli(nombre);
@@ -61,6 +61,8 @@ public class ControladorCliente {
         objetoCliente.setCedulaCli(cedula);
         objetoCliente.setTelefonoCli(telefono);
         objetoCliente.setCorreoCli(correo);
+        objetoCliente.setSexoCli(sexo);
+        objetoCliente.setEstadoCli(estado);
         
         objetoCliente.modificar();
         JOptionPane.showMessageDialog(null, "SE MODIFICO CON EXITO");
