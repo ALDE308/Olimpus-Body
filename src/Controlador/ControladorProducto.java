@@ -26,20 +26,27 @@ public class ControladorProducto {
     
     public void guardarProducto(String nombre, int codigo, double precio, String descripcion, 
                                 int cantidad, int proveedor, String estado ){
+        
         Modelo.DAOProducto objProducto = new Modelo.DAOProducto();
-        objProducto.setNombrePro(nombre);
-        objProducto.setCodigoPro(codigo);
-        objProducto.setPrecioPro(codigo);
-        objProducto.setDescripcionPro(descripcion);
-        objProducto.setCantidadPro(cantidad);
-        objProducto.setEstadoProd(estado);
-        objProducto.setProveedorPro(proveedor);
-        try{
+        Modelo.DAOProveedor objproveedor = new Modelo.DAOProveedor();
+        
+        String resultado = verificarExitencia(codigo);
+        String resultado1 = verificarExitenciaProveedor(proveedor,estado);
+        
+        if(resultado.equals("")){
+            System.out.print("aqui");
+        }else {
+            objProducto.setNombrePro(nombre);
+            objProducto.setCodigoPro(codigo);
+            objProducto.setPrecioPro(codigo);
+            objProducto.setDescripcionPro(descripcion);
+            objProducto.setCantidadPro(cantidad);
+            objProducto.setEstadoProd(estado);
+            objProducto.setProveedorPro(proveedor);
             objProducto.insertar();
-        }catch(Exception  ex){
+            
             JOptionPane.showMessageDialog(null,"SE REGISTRO CON EXITO");
         }
-        
     }
            
     public void eliminarPro (int codePro,String estado){
@@ -83,7 +90,20 @@ public class ControladorProducto {
        resultado = objetoProducto.consultarExitencia();
       
         if(resultado.equals("")){
-            JOptionPane.showMessageDialog(null, "EL CLIENTE YA EXISTE");
+            JOptionPane.showMessageDialog(null, "EL PRODUCTO YA EXISTE");
+        }
+        return resultado;
+    }
+    
+    public String verificarExitenciaProveedor (int datoBuscar, String estado){
+       Modelo.DAOProveedor objetoProveedor = new Modelo.DAOProveedor();
+       objetoProveedor.setNitProv(datoBuscar);
+    
+       String resultado = "";
+       resultado = objetoProveedor.consultarExitencia(estado);
+      
+        if(resultado.equals("")){
+            JOptionPane.showMessageDialog(null, "");
         }
         return resultado;
     }

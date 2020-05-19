@@ -56,7 +56,8 @@ public class ControladorEmpleado {
        JOptionPane.showMessageDialog(null,"SE REGISTRO CON EXITO");
     }
     
-    public void editarEmpleado(int cedula, String nombre, String apellido, double telefono, String direccion,int sueldo){
+    public String editarEmpleado(int cedula, String nombre, String apellido, double telefono, String direccion,int sueldo,String estado){
+        
         Modelo.DAOEmpleado objEmpleado = new Modelo.DAOEmpleado();
         objEmpleado.setCedulaEmpleado(cedula);
         objEmpleado.setNombreEmpleado(nombre);
@@ -64,10 +65,22 @@ public class ControladorEmpleado {
         objEmpleado.setTelefonoEmpleado(telefono);
         objEmpleado.setDireccionEmpleado(direccion);
         objEmpleado.setSueldo(sueldo);
-    
-        objEmpleado.modificar();
-        JOptionPane.showMessageDialog(null,"SE MODIFICO CON EXITO");
+        objEmpleado.setEstadoEmpl(estado);
+        
+        String estado1 = "Inactivo";
+        String resultado = "";
+        resultado = objEmpleado.consultarExitencia(estado1);
+        
+        if(resultado.equals("")){
+            JOptionPane.showMessageDialog(null, "El EMPLEADO NO EXISTE");
+        }else{
+            objEmpleado.modificar();
+            JOptionPane.showMessageDialog(null, "El EMPLEADO SE MODIFICO CON EXITO");
+        }
+        return resultado;
+   
     }
+    
     public String verificarExitencia (int datoBuscar){
        Modelo.DAOEmpleado objetoEmpleado = new Modelo.DAOEmpleado();
        objetoEmpleado.setCedulaEmpleado(datoBuscar);

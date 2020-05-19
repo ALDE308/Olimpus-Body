@@ -1,72 +1,133 @@
-
 package Modelo;
 
 public class Cotizacion {
-    private int codigocotizacion;
+    //Variables para la tabla cotizzacion
+    private int codigoCotizacion;
     private int cedulaClien;
     private int cedulaEmple;
     private String fecha;
-    private int codigoProducto;
-    private double total;
-    
+    private double totalC;
+    //Variables para la tabla DetalleCotizacion
+    private int idDetalle;
+    private int idCotizacion;
+    private int codigoProduc;
+    private int cantida;
+    private double iva;
+    private double valorUnitario;
+    private double totalD;
+
     public Cotizacion() {
     }
 
-    public Cotizacion(int codigocotizacion, int cedulaClien, int cedulaEmple, String fecha, int codigoProducto, double total) {
-        this.codigocotizacion = codigocotizacion;
+    public Cotizacion(int codigoCotizacion, int cedulaClien, int cedulaEmple, String fecha, double totalC, int idDetalle, int idCotizacion, int codigoProduc, int cantida, double iva, double valorUnitario, double totalD) {
+        this.codigoCotizacion = codigoCotizacion;
         this.cedulaClien = cedulaClien;
         this.cedulaEmple = cedulaEmple;
         this.fecha = fecha;
-        this.codigoProducto = codigoProducto;
-        this.total = total;
+        this.totalC = totalC;
+        this.idDetalle = idDetalle;
+        this.idCotizacion = idCotizacion;
+        this.codigoProduc = codigoProduc;
+        this.cantida = cantida;
+        this.iva = iva;
+        this.valorUnitario = valorUnitario;
+        this.totalD = totalD;
     }
 
-    public int getCodigocotizacion() {
-        return codigocotizacion;
+    public int getCodigoCotizacion() {
+        return codigoCotizacion;
+    }
+
+    public void setCodigoCotizacion(int codigoCotizacion) {
+        this.codigoCotizacion = codigoCotizacion;
     }
 
     public int getCedulaClien() {
         return cedulaClien;
     }
 
-    public int getCedulaEmple() {
-        return cedulaEmple;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public int getCodigoProducto() {
-        return codigoProducto;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setCodigocotizacion(int codigocotizacion) {
-        this.codigocotizacion = codigocotizacion;
-    }
-
     public void setCedulaClien(int cedulaClien) {
         this.cedulaClien = cedulaClien;
+    }
+
+    public int getCedulaEmple() {
+        return cedulaEmple;
     }
 
     public void setCedulaEmple(int cedulaEmple) {
         this.cedulaEmple = cedulaEmple;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public void setCodigoProducto(int codigoProducto) {
-        this.codigoProducto = codigoProducto;
+    public double getTotalC() {
+        return totalC;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
+    public void setTotalC(double totalC) {
+        this.totalC = totalC;
+    }
+
+    public int getIdDetalle() {
+        return idDetalle;
+    }
+
+    public void setIdDetalle(int idDetalle) {
+        this.idDetalle = idDetalle;
+    }
+
+    public int getIdCotizacion() {
+        return idCotizacion;
+    }
+
+    public void setIdCotizacion(int idCotizacion) {
+        this.idCotizacion = idCotizacion;
+    }
+
+    public int getCodigoProduc() {
+        return codigoProduc;
+    }
+
+    public void setCodigoProduc(int codigoProduc) {
+        this.codigoProduc = codigoProduc;
+    }
+
+    public int getCantida() {
+        return cantida;
+    }
+
+    public void setCantida(int cantida) {
+        this.cantida = cantida;
+    }
+
+    public double getIva() {
+        return iva;
+    }
+
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    public double getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
+
+    public double getTotalD() {
+        return totalD;
+    }
+
+    public void setTotalD(double totalD) {
+        this.totalD = totalD;
     }
     
     

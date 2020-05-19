@@ -50,6 +50,12 @@ public class EditarEmpleado extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("CEDULA DEL EMPLEADO");
 
+        cedulaEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cedulaEmpleadoKeyTyped(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("NOMBRES");
 
@@ -58,6 +64,12 @@ public class EditarEmpleado extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("TELEFONO");
+
+        telefonoEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telefonoEmpleadoKeyTyped(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("DIRECCION");
@@ -86,6 +98,12 @@ public class EditarEmpleado extends javax.swing.JFrame {
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSalirActionPerformed(evt);
+            }
+        });
+
+        sueldoEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sueldoEmpleadoKeyTyped(evt);
             }
         });
 
@@ -196,34 +214,43 @@ public class EditarEmpleado extends javax.swing.JFrame {
             int telefono = Integer.parseInt(telefonoEmpleado.getText());
             String direccion = direccionEmpleado.getText();
             int sueldo = Integer.parseInt(sueldoEmpleado.getText());
+            String estado = "Activo";
             
             Controlador.ControladorEmpleado ce = new Controlador.ControladorEmpleado();
-            ce.editarEmpleado(cedula, nombre, apellido, telefono, direccion,sueldo); 
+            ce.editarEmpleado(cedula, nombre, apellido, telefono, direccion,sueldo,estado); 
             limpiarCampos();
         }
     }//GEN-LAST:event_guardarCambiosActionPerformed
-    private void telefonoEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {                                          
-       char validar = evt.getKeyChar();
-       char dato = evt.getKeyChar();
-        if(Character.isLetter(validar)){
-            getToolkit().beep();
-            evt.consume();
-            
-            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
-        }
-       if(dato<'0'||dato>'9')evt.consume();
-    }                                         
 
-    private void cedulaEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {
-        char dato = evt.getKeyChar();
+    private void cedulaEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cedulaEmpleadoKeyTyped
         char validar = evt.getKeyChar();
-        if(dato<'0'||dato>'9')evt.consume();
         if(Character.isLetter(validar)){
             getToolkit().beep();
             evt.consume();
             JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
         }
-    } 
+    }//GEN-LAST:event_cedulaEmpleadoKeyTyped
+
+    private void telefonoEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefonoEmpleadoKeyTyped
+       char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_telefonoEmpleadoKeyTyped
+
+    private void sueldoEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sueldoEmpleadoKeyTyped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_sueldoEmpleadoKeyTyped
+                                        
+
+
     
     public void limpiarCampos(){
         cedulaEmpleado.setText(" ");

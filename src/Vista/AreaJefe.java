@@ -308,7 +308,7 @@ public class AreaJefe extends javax.swing.JFrame {
     }//GEN-LAST:event_botonProveedorActionPerformed
 
     private void botonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReportesActionPerformed
-        ControlReportes vistaReportes = new ControlReportes();
+        GenerarPdfCliente vistaReportes = new GenerarPdfCliente();
         vistaReportes.setVisible(true);
     }//GEN-LAST:event_botonReportesActionPerformed
 
